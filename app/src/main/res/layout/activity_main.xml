@@ -42,9 +42,9 @@
             android:id="@+id/grupoGenero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@id/editNombre"
             app:layout_constraintStart_toStartOf="parent"
-            android:orientation="horizontal"
             android:layout_marginTop="16dp">
 
                 <RadioButton
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:text="Mostrar resumen"
             android:onClick="mostrarResumen"
-            android:background="@drawable/boton_pixel"
+            android:background="@drawable/boton_retro"
             android:fontFamily="@font/press_start_2p"
             android:textColor="#00FFAA"
             android:textSize="10sp"
@@ -119,7 +119,7 @@
             android:layout_height="wrap_content"
             android:text="Ir a registro"
             android:onClick="irARegistro"
-            android:background="@drawable/boton_pixel"
+            android:background="@drawable/boton_retro"
             android:fontFamily="@font/press_start_2p"
             android:textColor="#00FFAA"
             android:textSize="10sp"
@@ -136,7 +136,7 @@
             android:layout_height="wrap_content"
             android:text="Ver usuarios"
             android:onClick="verUsuarios"
-            android:background="@drawable/boton_pixel"
+            android:background="@drawable/boton_retro"
             android:fontFamily="@font/press_start_2p"
             android:textColor="#00FFAA"
             android:textSize="10sp"
@@ -146,21 +146,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp" />
 
+        <!-- Botón: Modificar / Eliminar -->
         <Button
             android:id="@+id/btnModificarEliminar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Modificar / Eliminar"
             android:onClick="abrirModificarEliminar"
-            android:background="@drawable/boton_pixel"
-            android:textColor="#00FFAA"
+            android:background="@drawable/boton_retro"
             android:fontFamily="@font/press_start_2p"
+            android:textColor="#00FFAA"
             android:textSize="10sp"
             android:padding="12dp"
             app:layout_constraintTop_toBottomOf="@id/btnVerUsuarios"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     fun mostrarResumen(view: View) {
         val nombre = findViewById<EditText>(R.id.editNombre).text.toString()
 
-        // Obtener género
         val grupoGenero = findViewById<RadioGroup>(R.id.grupoGenero)
         val idSeleccionado = grupoGenero.checkedRadioButtonId
         val genero = if (idSeleccionado != -1) {
@@ -34,28 +33,35 @@ class MainActivity : AppCompatActivity() {
             "No especificado"
         }
 
-        // Obtener intereses
         val intereses = mutableListOf<String>()
         if (findViewById<CheckBox>(R.id.cbDeporte).isChecked) intereses.add("Deporte")
         if (findViewById<CheckBox>(R.id.cbMusica).isChecked) intereses.add("Música")
         val interesesTexto = if (intereses.isNotEmpty()) intereses.joinToString(", ") else "Ninguno"
 
-        // Lanzar ResumenActivity con los datos
         val intent = Intent(this, ResumenActivity::class.java)
         intent.putExtra("nombre", nombre)
         intent.putExtra("genero", genero)
         intent.putExtra("intereses", interesesTexto)
         startActivity(intent)
+        overridePendingTransition(R.anim.entrada, R.anim.salida)
     }
 
     fun irARegistro(view: View) {
         val intent = Intent(this, RegistroActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.entrada, R.anim.salida)
     }
 
     fun verUsuarios(view: View) {
         val intent = Intent(this, ConsultaUsuariosActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.entrada, R.anim.salida)
+    }
+
+    fun abrirModificarEliminar(view: View) {
+        val intent = Intent(this, ModificarEliminarActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.entrada, R.anim.salida)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -67,30 +73,24 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.menu_registro -> {
                 startActivity(Intent(this, RegistroActivity::class.java))
+                overridePendingTransition(R.anim.entrada, R.anim.salida)
                 true
             }
             R.id.menu_consulta -> {
                 startActivity(Intent(this, ConsultaUsuariosActivity::class.java))
-                true
-            }
-            R.id.menu_salir -> {
-                finishAffinity() // Cierra la app
+                overridePendingTransition(R.anim.entrada, R.anim.salida)
                 true
             }
             R.id.menu_modificar -> {
                 startActivity(Intent(this, ModificarEliminarActivity::class.java))
+                overridePendingTransition(R.anim.entrada, R.anim.salida)
                 true
             }
-
+            R.id.menu_salir -> {
+                finishAffinity()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-    fun abrirModificarEliminar(view: View) {
-        val intent = Intent(this, ModificarEliminarActivity::class.java)
-        startActivity(intent)
-    }
-
-
-
 }
