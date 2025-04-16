@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MyGymAplication</string>
+    <string name="title_activity_resumen">ResumenActivity</string>
+    <string name="genero_femenino">Femenino</string>
+    <string name="genero_masculino">Masculino</string>
+    <string name="genero_otro">Otro</string>
+    <string name="interes_musica">Música</string>
+    <string name="interes_deporte">Deporte</string>
+    <string name="titulo_bienvenida">Bienvenido/a</string>
+
 </resources>

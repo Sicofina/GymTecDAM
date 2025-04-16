@@ -1,19 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/black"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- Título -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido/a"
+            android:textColor="#00FFAA"
+            android:fontFamily="@font/press_start_2p"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Nombre -->
+        <EditText
+            android:id="@+id/editNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Escribí tu nombre"
+            android:textColorHint="#AAAAAA"
+            android:textColor="#00FFAA"
+            android:backgroundTint="#5C1A72"
+            android:fontFamily="@font/press_start_2p"
+            app:layout_constraintTop_toBottomOf="@id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="16dp"/>
+
+        <!-- RadioGroup: Género -->
+        <RadioGroup
+            android:id="@+id/grupoGenero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editNombre"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+                <RadioButton
+                    android:id="@+id/rbMasculino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masculino"
+                    android:textColor="#00FFAA"
+                    android:fontFamily="@font/press_start_2p" />
+
+                <RadioButton
+                    android:id="@+id/rbFemenino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Femenino"
+                    android:textColor="#00FFAA"
+                    android:fontFamily="@font/press_start_2p" />
+
+                <RadioButton
+                    android:id="@+id/rbOtro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Otro"
+                    android:textColor="#00FFAA"
+                    android:fontFamily="@font/press_start_2p" />
+        </RadioGroup>
+
+        <!-- CheckBoxes: Intereses -->
+        <CheckBox
+            android:id="@+id/cbDeporte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deporte"
+            android:textColor="#00FFAA"
+            android:fontFamily="@font/press_start_2p"
+            app:layout_constraintTop_toBottomOf="@id/grupoGenero"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/cbMusica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Música"
+            android:textColor="#00FFAA"
+            android:fontFamily="@font/press_start_2p"
+            app:layout_constraintTop_toBottomOf="@id/grupoGenero"
+            app:layout_constraintStart_toEndOf="@id/cbDeporte"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón: Mostrar resumen -->
+        <Button
+            android:id="@+id/btnProcesar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mostrar resumen"
+            android:onClick="mostrarResumen"
+            android:background="@drawable/boton_pixel"
+            android:fontFamily="@font/press_start_2p"
+            android:textColor="#00FFAA"
+            android:textSize="10sp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/cbDeporte"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp" />
+
+        <!-- Botón: Ir a registro -->
+        <Button
+            android:id="@+id/btnIrRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ir a registro"
+            android:onClick="irARegistro"
+            android:background="@drawable/boton_pixel"
+            android:fontFamily="@font/press_start_2p"
+            android:textColor="#00FFAA"
+            android:textSize="10sp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btnProcesar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp" />
+
+        <!-- Botón: Ver usuarios -->
+        <Button
+            android:id="@+id/btnVerUsuarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver usuarios"
+            android:onClick="verUsuarios"
+            android:background="@drawable/boton_pixel"
+            android:fontFamily="@font/press_start_2p"
+            android:textColor="#00FFAA"
+            android:textSize="10sp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btnIrRegistro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp" />
+
+        <Button
+            android:id="@+id/btnModificarEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modificar / Eliminar"
+            android:onClick="abrirModificarEliminar"
+            android:background="@drawable/boton_pixel"
+            android:textColor="#00FFAA"
+            android:fontFamily="@font/press_start_2p"
+            android:textSize="10sp"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btnVerUsuarios"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

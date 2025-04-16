@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_registro"
+        android:title="Registro" />
+    <item
+        android:id="@+id/menu_consulta"
+        android:title="Consulta" />
+    <item
+        android:id="@+id/menu_salir"
+        android:title="Salir" />
+    <item
+        android:id="@+id/menu_modificar"
+        android:title="Modificar / Eliminar" />
+
+</menu>
