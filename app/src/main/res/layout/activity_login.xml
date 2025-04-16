@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!-- Ícono de usuario -->
+    <ImageView
+        android:id="@+id/imgUsuario"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_usuario"
+        android:contentDescription="Ícono de usuario"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo Usuario -->
+    <EditText
+        android:id="@+id/editLoginUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Usuario"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#CCCCCC"
+        android:backgroundTint="#5C1A72"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="14sp"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/imgUsuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="24dp" />
+
+    <!-- Campo Contraseña -->
+    <EditText
+        android:id="@+id/editLoginClave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#CCCCCC"
+        android:backgroundTint="#5C1A72"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="14sp"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/editLoginUsuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Mostrar contraseña -->
+    <CheckBox
+        android:id="@+id/cbMostrarClave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar contraseña"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/editLoginClave"
+        app:layout_constraintStart_toStartOf="@id/editLoginClave"
+        android:layout_marginTop="8dp" />
+
+    <!-- Botón Ingresar -->
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresar"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="16sp"
+        android:background="@drawable/boton_login"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        app:layout_constraintTop_toBottomOf="@id/cbMostrarClave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Botón Registrarse -->
+    <Button
+        android:id="@+id/btnIrRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="16sp"
+        android:background="@drawable/boton_login"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        app:layout_constraintTop_toBottomOf="@id/btnIniciarSesion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
