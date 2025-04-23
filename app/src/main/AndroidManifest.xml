@@ -12,16 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyGymAplication"
         tools:targetApi="31">
+
+        <!-- Actividad principal -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BienvenidaActivity" android:exported="false"/>
+
+        <!-- Pantalla de bienvenida -->
+        <activity android:name=".BienvenidaActivity" android:exported="false" />
+
+        <!-- Pantalla de registro de clientes -->
+        <activity android:name=".RegistroActivity" android:exported="false" />
+
+        <!-- Pantalla de perfil de cliente -->
+        <activity android:name=".PerfilClienteActivity" android:exported="false" />
 
     </application>
 

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:text="Nombre:" />
+
+        <TextView
+            android:id="@+id/tvApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:text="Apellido:" />
+
+        <TextView
+            android:id="@+id/tvDni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:text="DNI:" />
+
+        <TextView
+            android:id="@+id/tvFechaNacimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:text="Fecha Nacimiento:" />
+
+        <TextView
+            android:id="@+id/tvTipoCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:text="Tipo Cliente:" />
+
+        <CheckBox
+            android:id="@+id/cbAptoFisicoPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apto médico presentado"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnIrAPagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ir a Pagar"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnDarseDeBaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Darse de baja"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnQuieroSerSocio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quiero ser Socio"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnHistorial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historial de Pagos"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>
