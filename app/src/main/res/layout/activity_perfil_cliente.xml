@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView android:id="@+id/tvNombre" android:text="Nombre" android:textColor="#FFFFFF"/>
+        <TextView android:id="@+id/tvApellido" android:text="Apellido" android:textColor="#FFFFFF"/>
+        <TextView android:id="@+id/tvDni" android:text="DNI" android:textColor="#FFFFFF"/>
+        <TextView android:id="@+id/tvFechaNacimiento" android:text="Fecha Nac" android:textColor="#FFFFFF"/>
+        <TextView android:id="@+id/tvTipoCliente" android:text="Tipo" android:textColor="#FFFFFF"/>
+
+        <CheckBox
+            android:id="@+id/cbAptoFisicoPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apto médico presentado"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnIrAPagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ir a Pagar" />
+
+        <Button
+            android:id="@+id/btnDarseDeBaja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Darse de baja" />
+
+        <Button
+            android:id="@+id/btnQuieroSerSocio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quiero ser Socio" />
+
+        <Button
+            android:id="@+id/btnHistorial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historial de Pagos" />
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volver" />
+    </LinearLayout>
+</ScrollView>

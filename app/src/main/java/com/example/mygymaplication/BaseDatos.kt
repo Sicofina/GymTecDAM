@@ -48,4 +48,27 @@ class BaseDatos(context: Context) : SQLiteOpenHelper(context, "ClubDeportivo.db"
         cursor.close()
         return existe
     }
+
+    fun obtenerTodosLosClientesOrdenados(): List<Cliente> {
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT nombre, apellido, dni, fechaNacimiento, aptoFisico, tipoCliente FROM Cliente ORDER BY nombre", null)
+
+        val lista = mutableListOf<Cliente>()
+        while (cursor.moveToNext()) {
+            lista.add(
+                Cliente(
+                    cursor.getString(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getInt(4) == 1,
+                    cursor.getString(5)
+                )
+            )
+        }
+        cursor.close()
+        return lista
+    }
+
+
 }
