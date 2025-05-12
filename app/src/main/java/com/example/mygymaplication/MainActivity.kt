@@ -51,7 +51,10 @@ class MainActivity : AppCompatActivity() {
 
         val dbHelper = BaseDatos(this)
         val db: SQLiteDatabase = dbHelper.readableDatabase
-        val cursor = db.rawQuery("SELECT * FROM Usuario WHERE nombre = ? AND clave = ?", arrayOf(usuario, clave))
+        val cursor = db.rawQuery(
+            "SELECT * FROM Usuario WHERE nombre = ? AND clave = ?",
+            arrayOf(usuario, clave)
+        )
 
         if (cursor.moveToFirst()) {
             Toast.makeText(this, "¡Bienvenido, $usuario!", Toast.LENGTH_SHORT).show()
