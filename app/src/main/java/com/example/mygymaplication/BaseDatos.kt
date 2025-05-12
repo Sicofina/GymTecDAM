@@ -64,9 +64,32 @@ class BaseDatos(context: Context) : SQLiteOpenHelper(context, "ClubDeportivo.db"
         return existe
     }
 
+    fun insertarCliente(
+        nombre: String,
+        apellido: String,
+        dni: String,
+        fechaNacimiento: String,
+        aptoFisico: Boolean,
+        tipoCliente: String
+    ): Long {
+        val db = writableDatabase
+        val valores = ContentValues().apply {
+            put("nombre", nombre)
+            put("apellido", apellido)
+            put("dni", dni)
+            put("fechaNacimiento", fechaNacimiento)
+            put("aptoFisico", if (aptoFisico) 1 else 0)
+            put("tipoCliente", tipoCliente)
+        }
+        return db.insert("Cliente", null, valores)
+    }
+
     fun obtenerTodosLosClientesOrdenados(): List<Cliente> {
         val db = readableDatabase
-        val cursor = db.rawQuery("SELECT nombre, apellido, dni, fechaNacimiento, aptoFisico, tipoCliente FROM Cliente ORDER BY nombre", null)
+        val cursor = db.rawQuery(
+            "SELECT nombre, apellido, dni, fechaNacimiento, aptoFisico, tipoCliente FROM Cliente ORDER BY nombre",
+            null
+        )
 
         val lista = mutableListOf<Cliente>()
         while (cursor.moveToNext()) {
@@ -84,5 +107,4 @@ class BaseDatos(context: Context) : SQLiteOpenHelper(context, "ClubDeportivo.db"
         cursor.close()
         return lista
     }
-
 }
